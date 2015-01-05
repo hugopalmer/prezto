@@ -12,3 +12,45 @@ fi
 
 # Customize to your needs...
 export LSCOLORS="gxfxcxdxbxegedabagacad"
+export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/bin
+
+export EDITOR=vim
+export DEBEMAIL=remi.paulmier@gmail.com
+export DEBFULLNAME="Remi Paulmier"
+
+# chef / knife
+export KNIFE_CONF_PATH=${HOME}/.chef/knife.rb
+
+# python3 / pip / virtualenv
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+# Amazon
+if test -f $HOME/.local/bin/aws_zsh_completer.sh; then
+  source $HOME/.local/bin/aws_zsh_completer.sh
+fi
+export PATH=$PATH:$HOME/.local/bin
+export AWS_CONFIG_FILE=$HOME/.aws/config
+
+# zsh zle: non-alphanum chars which are part of a word
+export WORDCHARS=
+
+# disable shared history
+setopt no_share_history
+
+# dont kill bg jobs but still displays a warning at first attempt to exit
+# use setopt no_check_jobs if you dont want the 1st check
+setopt no_hup
+
+# my aliases
+alias lxca='lxc-attach -e -n'
+alias s='ssh'
+alias sr='ssh -l root'
+alias e='emacs'
+alias vi='vim'
+
+# zsh completion is case insensitive with prezto
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
