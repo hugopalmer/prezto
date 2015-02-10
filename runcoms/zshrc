@@ -18,6 +18,9 @@ export EDITOR=vim
 export DEBEMAIL=remi.paulmier@gmail.com
 export DEBFULLNAME="Remi Paulmier"
 
+# brew / github API token
+export HOMEBREW_GITHUB_API_TOKEN=d70711594d61fff5859140915595420ff31a2849
+
 # chef / knife
 export KNIFE_CONF_PATH=${HOME}/.chef/knife.rb
 
