@@ -33,9 +33,16 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 # Amazon
 if test -f $HOME/.local/bin/aws_zsh_completer.sh; then
   source $HOME/.local/bin/aws_zsh_completer.sh
+  export PATH=$PATH:$HOME/.local/bin
 fi
-export PATH=$PATH:$HOME/.local/bin
-export AWS_CONFIG_FILE=$HOME/.aws/config
+if test -f $HOME/.aws/config; then
+  export AWS_CONFIG_FILE=$HOME/.aws/config
+fi
+
+# rancid
+if test -d '/var/lib/rancid/bin'; then
+  export PATH="$PATH":/var/lib/rancid/bin
+fi
 
 # zsh zle: non-alphanum chars which are part of a word
 export WORDCHARS=
