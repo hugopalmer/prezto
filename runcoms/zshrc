@@ -43,6 +43,11 @@ fi
 if test -d '/var/lib/rancid/bin'; then
   export PATH="$PATH":/var/lib/rancid/bin
 fi
+compdef _hosts clogin
+
+# hping
+compdef _hosts hping
+compdef _hosts hping3
 
 # zsh zle: non-alphanum chars which are part of a word
 export WORDCHARS=
