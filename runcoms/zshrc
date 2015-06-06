@@ -29,7 +29,10 @@ export KNIFE_CONF_PATH=${HOME}/.chef/knife.rb
 #export PIP_REQUIRE_VIRTUALENV=true
 # virtualenvwrapper
 export WORKON_HOME=/Users/remi/.virtualenvs
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+export VIRTUALENV_WRAPPER=/usr/local/bin/virtualenvwrapper_lazy.sh
+if [ -x $VIRTUALENV_WRAPPER ]; then
+    source $VIRTUALENV_WRAPPER
+fi
 
 # Amazon
 if test -f $HOME/.local/bin/aws_zsh_completer.sh; then
