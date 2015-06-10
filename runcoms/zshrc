@@ -54,10 +54,15 @@ if test -d $GOBIN; then
     export PATH=$PATH:$GOBIN
 fi
 
-# boot2docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/remi/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+# coreos-vagrant
+export DOCKER_HOST=tcp://127.0.0.1:2375
+_coreos_vagrant() {
+    ( cd $HOME/github/coreos-vagrant && \
+        vagrant $* )
+}
+alias boot2coreos=_coreos_vagrant
+# use the same completion as for vagrant
+compdef _vagrant _coreos_vagrant
 
 # rancid
 if test -d '/var/lib/rancid/bin'; then
