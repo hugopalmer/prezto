@@ -64,6 +64,9 @@ alias boot2coreos=_coreos_vagrant
 # use the same completion as for vagrant
 compdef _vagrant _coreos_vagrant
 
+# fleet
+export FLEETCTL_ENDPOINT=http://127.0.0.1:4001
+
 # rancid
 if test -d '/var/lib/rancid/bin'; then
   export PATH="$PATH":/var/lib/rancid/bin
@@ -79,6 +82,9 @@ export WORDCHARS=
 
 # disable shared history
 setopt no_share_history
+
+# allow > on existing files
+setopt clobber
 
 # dont kill bg jobs but still displays a warning at first attempt to exit
 # use setopt no_check_jobs if you dont want the 1st check
