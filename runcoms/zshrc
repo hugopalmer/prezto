@@ -44,14 +44,9 @@ if test -f $HOME/.aws/config; then
 fi
 
 # golang
-export GOROOT=/usr/local/go
-if test -d $GOROOT/bin; then
-    export PATH=$PATH:$GOROOT/bin
-fi
 export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-if test -d $GOBIN; then
-    export PATH=$PATH:$GOBIN
+if test -d $GOPATH/bin; then
+    export PATH=$PATH:$GOPATH/bin
 fi
 
 # coreos-vagrant
