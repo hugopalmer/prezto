@@ -49,6 +49,12 @@ if test -d $GOPATH/bin; then
     export PATH=$PATH:$GOPATH/bin
 fi
 
+# chefdk
+export CHEFDKPATH=/opt/chefdk
+if test -d $CHEFDKPATH/bin; then
+    export PATH=$PATH:$CHEFDKPATH/bin
+fi
+
 # coreos-vagrant
 export DOCKER_HOST=tcp://127.0.0.1:2375
 _coreos_vagrant() {
