@@ -58,7 +58,7 @@ fi
 # coreos-vagrant
 export DOCKER_HOST=tcp://127.0.0.1:2375
 _coreos_vagrant() {
-    ( cd $HOME/github/coreos-vagrant && \
+    ( cd $HOME/stash/docker/coreos-vagrant && \
         vagrant $* )
 }
 alias boot2coreos=_coreos_vagrant
