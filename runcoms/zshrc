@@ -34,6 +34,11 @@ if [ -x $VIRTUALENV_WRAPPER ]; then
     source $VIRTUALENV_WRAPPER
 fi
 
+# ruby with brew and rbenv
+if which rbenv > /dev/null; then
+    eval "$(rbenv init -)"
+fi
+
 # Amazon
 if test -f $HOME/.local/bin/aws_zsh_completer.sh; then
   source $HOME/.local/bin/aws_zsh_completer.sh
