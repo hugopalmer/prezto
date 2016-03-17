@@ -111,7 +111,11 @@ zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 # re-enable ctrl-o under osx
 stty discard undef
 
+# bbc container build-tools
+export PATH=$HOME/stash/docker/build-tools/bin:$PATH
+
 # BBC magic command
 if [ -f $HOME/stash/admin/bbc-command/bin/bbc ]; then
   eval "$($HOME/stash/admin/bbc-command/bin/bbc init -)"
 fi
+
