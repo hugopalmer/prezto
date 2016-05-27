@@ -97,7 +97,7 @@ setopt clobber
 setopt no_hup
 
 # my aliases
-alias rancid='ssh -t rancid@vbbcnetmon1.prod.par-1.h.blbl.cr'
+alias rancid='ssh -t bastion rancid@vbbcnetmon1.prod.par-1.h.blbl.cr'
 alias lxca='lxc-attach -e -n'
 alias s='ssh'
 alias sr='ssh -l root'
