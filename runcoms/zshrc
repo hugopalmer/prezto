@@ -109,7 +109,9 @@ alias vi='vim'
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # re-enable ctrl-o under osx
-stty discard undef
+if [ x$(uname -s) = xDarwin ]; then
+  stty discard undef
+fi
 
 # bbc container build-tools
 export PATH=$HOME/stash/docker/build-tools/bin:$PATH
