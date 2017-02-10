@@ -103,6 +103,7 @@ alias s='ssh'
 alias sr='ssh -l root'
 alias e='emacs'
 alias vi='vim'
+alias clean_pycache='find . | grep -E "(__pycache__|\.pyc|\.pyo)$" | xargs rm -vrf'
 
 # zsh completion is case insensitive with prezto
 # zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
